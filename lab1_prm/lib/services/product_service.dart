@@ -19,4 +19,13 @@ class ProductService {
       return null;
     }
   }
+
+  static void editProduct(int id, String name, double price, int quantity) {
+    Product? product = findById(id);
+    if (product != null) {
+      product.name = name;
+      product.price = price;
+      product.quantity = quantity;
+    }
+  }
 }

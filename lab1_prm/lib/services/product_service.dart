@@ -11,4 +11,12 @@ class ProductService {
             product.name.toLowerCase().contains(name.toLowerCase()))
         .toList();
   }
+
+  static Product? findById(int id) {
+    try {
+      return Product.products.firstWhere((product) => product.id == id);
+    } catch (e) {
+      return null;
+    }
+  }
 }

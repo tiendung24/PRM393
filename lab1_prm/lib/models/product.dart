@@ -4,6 +4,8 @@ class Product {
   late double price;
   late int quantity;
 
+  Product();
+
   static List<Product> products = [];
 
   static void addProduct(int id, String name, double price, int quantity) {

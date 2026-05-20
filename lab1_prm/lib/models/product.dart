@@ -14,4 +14,11 @@ class Product {
     product.quantity = quantity;
     products.add(product);
   }
+
+  Product.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    name = json['name'];
+    price = json['price'];
+    quantity = json['quantity'];
+  }
 }

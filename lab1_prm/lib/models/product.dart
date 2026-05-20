@@ -30,4 +30,8 @@ class Product {
       'quantity': quantity,
     };
   }
+
+  void increasePrice10Percent() {
+    price = price * 1.1;
+  }
 }

@@ -21,4 +21,13 @@ class Product {
     price = json['price'];
     quantity = json['quantity'];
   }
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'name': name,
+      'price': price,
+      'quantity': quantity,
+    };
+  }
 }

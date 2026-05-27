@@ -1,6 +1,9 @@
 ﻿import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import '../../widgets/page_title.dart';
+import '../../widgets/section_card.dart';
+import '../../widgets/spacing.dart';
 import '../state/app_state.dart';
 
 class ExerciseFourScreen extends StatelessWidget {
@@ -23,7 +26,7 @@ class ExerciseFourScreen extends StatelessWidget {
             child: const Icon(Icons.add),
           ),
           body: ListView(
-            padding: const EdgeInsets.all(16),
+            padding: const EdgeInsets.all(AppSpacing.p16),
             children: [
               Card(
                 child: SwitchListTile(
@@ -33,21 +36,11 @@ class ExerciseFourScreen extends StatelessWidget {
                   onChanged: appState.setDarkMode,
                 ),
               ),
-              const SizedBox(height: 16),
-              Card(
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Text(
-                        'Scaffold structure demo',
-                        style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                      ),
-                      SizedBox(height: 12),
-                      Text('This screen includes AppBar, Body, FloatingActionButton, and ThemeData customization.'),
-                    ],
-                  ),
+              AppSpacing.s16,
+              const SectionCard(
+                child: PageTitle(
+                  title: 'Scaffold structure demo',
+                  subtitle: 'This screen includes AppBar, Body, FloatingActionButton, and ThemeData customization.',
                 ),
               ),
             ],

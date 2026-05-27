@@ -1,5 +1,9 @@
 ﻿import 'package:flutter/material.dart';
 
+import '../../widgets/page_title.dart';
+import '../../widgets/section_card.dart';
+import '../../widgets/spacing.dart';
+
 class ExerciseOneScreen extends StatelessWidget {
   const ExerciseOneScreen({super.key});
 
@@ -8,19 +12,19 @@ class ExerciseOneScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Exercise 1 - Core Widgets')),
       body: ListView(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSpacing.p16),
         children: const [
-          Text(
-            'Flutter UI Fundamentals',
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+          PageTitle(
+            title: 'Flutter UI Fundamentals',
+            subtitle: 'Core widgets: Text, Image, Icon, Card, ListTile',
           ),
-          SizedBox(height: 16),
+          AppSpacing.s16,
           Icon(
             Icons.phone_android,
             size: 72,
             color: Colors.indigo,
           ),
-          SizedBox(height: 16),
+          AppSpacing.s16,
           ClipRRect(
             borderRadius: BorderRadius.all(Radius.circular(16)),
             child: Image(
@@ -31,9 +35,10 @@ class ExerciseOneScreen extends StatelessWidget {
               fit: BoxFit.cover,
             ),
           ),
-          SizedBox(height: 16),
-          Card(
+          AppSpacing.s16,
+          SectionCard(
             child: ListTile(
+              contentPadding: EdgeInsets.zero,
               leading: CircleAvatar(
                 backgroundColor: Colors.indigo,
                 child: Icon(Icons.school, color: Colors.white),

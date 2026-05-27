@@ -1,5 +1,8 @@
 ﻿import 'package:flutter/material.dart';
 
+import '../../widgets/page_title.dart';
+import '../../widgets/spacing.dart';
+
 class ExerciseThreeScreen extends StatelessWidget {
   const ExerciseThreeScreen({super.key});
 
@@ -19,17 +22,17 @@ class ExerciseThreeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: const Text('Exercise 3 - Layout Basics')),
       body: Padding(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSpacing.p16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              'Home Screen Layout',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+            const PageTitle(
+              title: 'Home Screen Layout',
+              subtitle: 'Column, Row, Padding, SizedBox, and ListView.builder',
             ),
-            const SizedBox(height: 12),
+            AppSpacing.s12,
             const Text('Featured categories'),
-            const SizedBox(height: 12),
+            AppSpacing.s12,
             Row(
               children: const [
                 Expanded(child: _CategoryCard(title: 'Movies', icon: Icons.movie)),
@@ -39,18 +42,18 @@ class ExerciseThreeScreen extends StatelessWidget {
                 Expanded(child: _CategoryCard(title: 'Books', icon: Icons.book)),
               ],
             ),
-            const SizedBox(height: 16),
+            AppSpacing.s16,
             const Text(
               'Recommended titles',
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
             ),
-            const SizedBox(height: 12),
+            AppSpacing.s12,
             Expanded(
               child: ListView.builder(
                 itemCount: movies.length,
                 itemBuilder: (context, index) {
                   return Padding(
-                    padding: const EdgeInsets.only(bottom: 12),
+                    padding: const EdgeInsets.only(bottom: AppSpacing.p12),
                     child: Card(
                       child: ListTile(
                         leading: CircleAvatar(child: Text('${index + 1}')),
@@ -79,7 +82,7 @@ class _CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 16),
+      padding: const EdgeInsets.symmetric(vertical: AppSpacing.p16),
       decoration: BoxDecoration(
         color: Theme.of(context).colorScheme.primaryContainer,
         borderRadius: BorderRadius.circular(16),
@@ -87,7 +90,7 @@ class _CategoryCard extends StatelessWidget {
       child: Column(
         children: [
           Icon(icon),
-          const SizedBox(height: 8),
+          AppSpacing.s8,
           Text(title),
         ],
       ),

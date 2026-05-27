@@ -7,7 +7,7 @@ import 'src/screens/exercise_one_screen.dart';
 import 'src/screens/exercise_three_screen.dart';
 import 'src/screens/exercise_two_screen.dart';
 import 'src/state/app_state.dart';
-import 'src/state/input_demo_state.dart';
+import 'widgets/spacing.dart';
 
 void main() {
   runApp(const LabFourApp());
@@ -88,14 +88,14 @@ class HomeScreen extends StatelessWidget {
         title: const Text('Lab 4 - Flutter UI Fundamentals'),
       ),
       body: ListView.separated(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(AppSpacing.p16),
         itemCount: exercises.length,
-        separatorBuilder: (_, _) => const SizedBox(height: 12),
+        separatorBuilder: (_, _) => AppSpacing.s12,
         itemBuilder: (context, index) {
           final item = exercises[index];
           return Card(
             child: ListTile(
-              contentPadding: const EdgeInsets.all(16),
+              contentPadding: const EdgeInsets.all(AppSpacing.p16),
               leading: CircleAvatar(
                 child: Text('${index + 1}'),
               ),
